@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Saving Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Energy Saving Assistant</h1>
+        </header>
+
+        <main>
+            <!-- Input Section -->
+            <section id="input-section">
+                <h2>Enter Appliance Data</h2>
+                <div class="input-container">
+                    <div class="manual-input">
+                        <h3>Appliance Details</h3>
+                        <form id="appliance-form">
+                            <input type="text" id="appliance-name" placeholder="Appliance Name" required>
+                            <input type="number" id="daily-hours" placeholder="Daily Usage Hours" required>
+                            <input type="number" id="monthly-consumption" placeholder="Monthly Electricity Consumed (kWh)" required>
+                            <button type="submit">Add Appliance</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appliances List -->
+            <section id="appliances-list">
+                <h2>Added Appliances</h2>
+                <div id="appliances-container"></div>
+            </section>
+
+            <!-- Savings Calculator -->
+            <section id="savings-calculator">
+                <h2>Savings Calculator</h2>
+                <div class="calculator-container">
+                    <select id="appliance-select">
+                        <option value="">Select Appliance</option>
+                    </select>
+                    <div class="reduction-slider">
+                        <label for="usage-reduction">Usage Reduction (%)</label>
+                        <input type="range" id="usage-reduction" min="0" max="100" value="0">
+                        <span id="reduction-value">0%</span>
+                    </div>
+                    <div id="savings-results">
+                        <h3>Potential Savings</h3>
+                        <p>Daily: $<span id="daily-savings">0.00</span></p>
+                        <p>Monthly: $<span id="monthly-savings">0.00</span></p>
+                        <p>Yearly: $<span id="yearly-savings">0.00</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Report Section -->
+            <section id="report-section">
+                <h2>Energy Usage Report</h2>
+                <div id="report-container"></div>
+                <div id="overall-summary">
+                    <h3>Overall Summary</h3>
+                    <div class="summary-grid">
+                        <div>Daily Usage: <span id="total-daily-usage">0</span> kWh</div>
+                        <div>Monthly Usage: <span id="total-monthly-usage">0</span> kWh</div>
+                        <div>Daily Cost: $<span id="total-daily-cost">0.00</span></div>
+                        <div>Monthly Cost: $<span id="total-monthly-cost">0.00</span></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
